@@ -131,6 +131,9 @@ class SPN_Corrector {
                             'total_questions' => $historical_test_size,
                             'total_questions_current' => $current_active_total,
                             'answered' => count($answered_keys_purged),
+                            'answered_orig' => count($answered_keys_orig),
+                            'answered_purged' => count($answered_keys_purged),
+                            'intruders_purged' => count($answered_keys_orig) - count($answered_keys_purged),
                         );
                     }
                 }

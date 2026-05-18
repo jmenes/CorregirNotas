@@ -155,8 +155,8 @@ jQuery(document).ready(function($) {
                                     <td class="col-test"><span class="dashicons dashicons-welcome-write-paper" style="font-size:16px;vertical-align:middle;margin-right:4px;color:var(--spn-text-muted);"></span>${item.test_title}</td>
                                     <td class="col-attempt">${item.attempt_idx}</td>
                                     <td class="col-date">${item.attempted_at}</td>
-                                    <td class="col-answers">${item.answered} / ${item.total_questions}</td>
-                                    <td class="col-current-total"><span class="spn-badge-score" style="background:#ecfdf5;color:#047857;">${item.total_questions_current}</span></td>
+                                    <td class="col-answers"><strong>${item.answered_purged}</strong> / ${item.answered_orig}</td>
+                                    <td class="col-current-total"><span class="spn-badge-score" style="background:#fee2e2;color:#b91c1c;font-weight:700;">${item.intruders_purged}</span></td>
                                     <td class="col-score"><span class="spn-badge-score" style="background:#f1f5f9;color:#64748b;">${item.score_stored.toFixed(2)}</span></td>
                                     <td class="col-score-new"><span class="spn-badge-score" style="background:#e0f2fe;color:#0284c7;">${item.score_new.toFixed(2)}</span></td>
                                     <td class="col-diff"><span class="spn-badge-diff ${diffClass}">${diffSign}${diff.toFixed(2)}</span></td>

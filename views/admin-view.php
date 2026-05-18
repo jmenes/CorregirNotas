@@ -119,8 +119,8 @@ if (!defined('ABSPATH')) {
                         <th class="col-test">Test afectado</th>
                         <th class="col-attempt">Nº intento</th>
                         <th class="col-date">Fecha intento</th>
-                        <th class="col-answers">Preguntas (Intento)</th>
-                        <th class="col-current-total">Preguntas actuales</th>
+                        <th class="col-answers">Respuestas (Válidas / Orig)</th>
+                        <th class="col-current-total">Intrusas Purgadas</th>
                         <th class="col-score">Nota DB</th>
                         <th class="col-score-new">Nota Real</th>
                         <th class="col-diff">Ajuste</th>
