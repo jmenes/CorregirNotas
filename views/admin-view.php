@@ -119,7 +119,8 @@ if (!defined('ABSPATH')) {
                         <th class="col-test">Test afectado</th>
                         <th class="col-attempt">Nº intento</th>
                         <th class="col-date">Fecha intento</th>
-                        <th class="col-answers">Preguntas (Resp. / Previas vs. Act.)</th>
+                        <th class="col-answers">Preguntas (Intento)</th>
+                        <th class="col-current-total">Preguntas actuales</th>
                         <th class="col-score">Nota DB</th>
                         <th class="col-score-new">Nota Real</th>
                         <th class="col-diff">Ajuste</th>
@@ -128,7 +129,7 @@ if (!defined('ABSPATH')) {
                 </thead>
                 <tbody id="spn-audit-table-body">
                     <tr class="spn-row-empty">
-                        <td colspan="9">
+                        <td colspan="10">
                             <div class="spn-empty-state">
                                 <span class="dashicons dashicons-database-search"></span>
                                 <p>Presiona <strong>"Escanear base de datos"</strong> para iniciar el diagnóstico.</p>
