@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: Corregir Notas SPN
- * Description: Herramienta avanzada para escanear, auditar y corregir retroactivamente las notas distorsionadas de los tests de la academia.
+ * Plugin Name: Corregir notas
+ * Description: Herramienta avanzada para escanear, auditar y corregir retroactivamente las notas distorsionadas de los tests del Campus.
  * Version: 1.0.0
- * Author: Antigravity AI
+ * Author: menes.studio
  * License: GPL2
  */
 
