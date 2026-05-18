@@ -9,17 +9,17 @@ if (!defined('ABSPATH')) {
 ?>
 
 <div class="wrap spn-corrector-wrap">
-    <!-- Header Premium -->
+    <!-- Header -->
     <div class="spn-header-card">
         <div class="spn-header-content">
             <span class="spn-badge-category">Herramientas de Saneamiento</span>
             <h1 class="spn-title">Auditoría y Corrección de Notas</h1>
-            <p class="spn-subtitle">Recalcula con precisión quirúrgica las calificaciones de los alumnos afectadas por la adición o eliminación posterior de preguntas en los tests del campus.</p>
+            <p class="spn-subtitle">Recalcula las calificaciones de los alumnos afectadas por la adición o eliminación posterior de preguntas en los tests.</p>
         </div>
         <div class="spn-header-accent"></div>
     </div>
 
-    <!-- Panel Informativo de Instrucciones (Fases Seguras) -->
+    <!-- Panel informativo de instrucciones (Fases seguras) -->
     <div class="spn-instruction-card">
         <div class="spn-instruction-icon">
             <span class="dashicons dashicons-shield"></span>
@@ -106,7 +106,7 @@ if (!defined('ABSPATH')) {
     <!-- Tabla de Auditoría e Intentos Afectados -->
     <div class="spn-table-card">
         <div class="table-header">
-            <h2>Pre-visualización de Discrepancias Detectadas</h2>
+            <h2>Pre-visualización de discrepancias detectadas</h2>
             <div class="table-actions">
                 <span class="table-legend">Mostrando solo discrepancias de cálculo</span>
             </div>
@@ -116,10 +116,10 @@ if (!defined('ABSPATH')) {
                 <thead>
                     <tr>
                         <th class="col-email">Alumno (Email)</th>
-                        <th class="col-test">Test Afectado</th>
-                        <th class="col-attempt">Nº Intento</th>
-                        <th class="col-date">Fecha Intento</th>
-                        <th class="col-answers">Respuestas / Preguntas</th>
+                        <th class="col-test">Test afectado</th>
+                        <th class="col-attempt">Nº intento</th>
+                        <th class="col-date">Fecha intento</th>
+                        <th class="col-answers">Preguntas (Resp. / Previas vs. Act.)</th>
                         <th class="col-score">Nota DB</th>
                         <th class="col-score-new">Nota Real</th>
                         <th class="col-diff">Ajuste</th>
@@ -131,7 +131,7 @@ if (!defined('ABSPATH')) {
                         <td colspan="9">
                             <div class="spn-empty-state">
                                 <span class="dashicons dashicons-database-search"></span>
-                                <p>Presiona <strong>"Escanear Base de Datos"</strong> para iniciar el diagnóstico exhaustivo.</p>
+                                <p>Presiona <strong>"Escanear base de datos"</strong> para iniciar el diagnóstico.</p>
                             </div>
                         </td>
                     </tr>

@@ -155,7 +155,13 @@ jQuery(document).ready(function($) {
                                     <td class="col-test"><span class="dashicons dashicons-welcome-write-paper" style="font-size:16px;vertical-align:middle;margin-right:4px;color:var(--spn-text-muted);"></span>${item.test_title}</td>
                                     <td class="col-attempt">${item.attempt_idx}</td>
                                     <td class="col-date">${item.attempted_at}</td>
-                                    <td class="col-answers">${item.answered} / ${item.total_questions}</td>
+                                    <td class="col-answers" style="text-align:center !important;">
+                                        <span class="spn-badge-score" style="background:#f1f5f9;color:#334155;padding:3px 6px;font-size:11px;" title="Respondidas por el alumno">${item.answered}</span>
+                                        <small style="color:var(--spn-text-muted);font-weight:600;margin:0 2px;">de</small>
+                                        <span class="spn-badge-score" style="background:#e2e8f0;color:#475569;padding:3px 6px;font-size:11px;" title="Total de preguntas previas en el test">${item.total_questions}</span>
+                                        <span style="color:var(--spn-text-muted);font-weight:700;margin:0 4px;">→</span>
+                                        <span class="spn-badge-score" style="background:#ecfdf5;color:#047857;padding:3px 6px;font-size:11px;font-weight:bold;" title="Total de preguntas actuales del test hoy">${item.total_questions_current}</span>
+                                    </td>
                                     <td class="col-score"><span class="spn-badge-score" style="background:#f1f5f9;color:#64748b;">${item.score_stored.toFixed(2)}</span></td>
                                     <td class="col-score-new"><span class="spn-badge-score" style="background:#e0f2fe;color:#0284c7;">${item.score_new.toFixed(2)}</span></td>
                                     <td class="col-diff"><span class="spn-badge-diff ${diffClass}">${diffSign}${diff.toFixed(2)}</span></td>

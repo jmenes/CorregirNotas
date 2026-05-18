@@ -84,6 +84,10 @@ class SPN_Corrector {
 
                 $test_title = isset($attempt_history['name']) ? $attempt_history['name'] : get_the_title($test_id);
 
+                // Obtener el total actual de preguntas configuradas en el test en vivo hoy
+                $current_questions = get_field('preguntas', $test_id);
+                $current_active_total = is_array($current_questions) ? count($current_questions) : 0;
+
                 foreach ($attempt_history['attempts'] as $idx => $att) {
                     $score_stored = isset($att['score']) ? (float)$att['score'] : 0.0;
                     $risked_stored = isset($att['risked_score']) ? (float)$att['risked_score'] : 0.0;
@@ -113,7 +117,8 @@ class SPN_Corrector {
                             'score_new' => $score_new,
                             'risked_new' => $risked_new,
                             'total_questions' => isset($att['details']['total_questions']) ? (int)$att['details']['total_questions'] : 0,
-                            'answered' => isset($att['details']['total_answered']) ? (int)$att['details']['total_answered'] : 0,
+                            'total_questions_current' => $current_active_total,
+                            'answered' => isset($att['details']['answered_ids']) && is_array($att['details']['answered_ids']) ? count($att['details']['answered_ids']) : (isset($att['details']['total_answered']) ? (int)$att['details']['total_answered'] : 0),
                         );
                     }
                 }
