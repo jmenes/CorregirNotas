@@ -102,8 +102,13 @@ class SPN_Corrector {
                     // Comprobar si existe discrepancia matemática
                     $diff_score = abs($score_stored - $score_new);
                     $diff_risked = abs($risked_stored - $risked_new);
-
                     if ($diff_score > 0.001 || $diff_risked > 0.001) {
+                        $question_order = isset($att['details']['question_order']) && is_array($att['details']['question_order']) ? $att['details']['question_order'] : array();
+                        $answered_keys = isset($att['details']['answered_ids']) && is_array($att['details']['answered_ids']) ? array_keys($att['details']['answered_ids']) : array();
+                        $historical_test_size = count(array_unique(array_merge($question_order, $answered_keys)));
+                        $historical_test_size = max($historical_test_size, isset($att['details']['total_questions']) ? (int)$att['details']['total_questions'] : 0);
+                        $historical_test_size = max($historical_test_size, count($answered_keys));
+
                         $discrepancies[] = array(
                             'user_id' => $uid,
                             'email' => $email,
@@ -116,9 +121,9 @@ class SPN_Corrector {
                             'risked_stored' => $risked_stored,
                             'score_new' => $score_new,
                             'risked_new' => $risked_new,
-                            'total_questions' => isset($att['details']['total_questions']) ? (int)$att['details']['total_questions'] : 0,
+                            'total_questions' => $historical_test_size,
                             'total_questions_current' => $current_active_total,
-                            'answered' => isset($att['details']['answered_ids']) && is_array($att['details']['answered_ids']) ? count($att['details']['answered_ids']) : (isset($att['details']['total_answered']) ? (int)$att['details']['total_answered'] : 0),
+                            'answered' => count($answered_keys),
                         );
                     }
                 }
