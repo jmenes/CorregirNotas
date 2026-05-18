@@ -25,7 +25,7 @@ if (!defined('ABSPATH')) {
             <span class="dashicons dashicons-shield"></span>
         </div>
         <div class="spn-instruction-text">
-            <h3>Flujo de Trabajo Seguro en Tres Pasos:</h3>
+            <h3>Flujo de trabajo</h3>
             <ol>
                 <li><strong>1. Escanear (Dry-Run):</strong> El sistema analizará toda la base de datos por lotes sin modificar nada y detectará discrepancias de notas.</li>
                 <li><strong>2. Auditar:</strong> Podrás ver al detalle en la tabla de pre-visualización los alumnos afectados, el test, la nota vieja y la nota corregida.</li>

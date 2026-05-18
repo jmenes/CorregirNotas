@@ -73,11 +73,13 @@ add_action('admin_enqueue_scripts', function($hook) {
         return;
     }
     
-    // Cargar estilos premium y dependencias
-    wp_enqueue_style('spn-corrector-admin-css', SPN_CORRECTOR_URL . 'assets/css/admin-style.css', array(), '1.0.0');
+    // Cargar estilos premium y dependencias con cache-busting dinámico basado en modificación del archivo
+    $style_ver = file_exists(SPN_CORRECTOR_DIR . 'assets/css/admin-style.css') ? filemtime(SPN_CORRECTOR_DIR . 'assets/css/admin-style.css') : '1.0.0';
+    wp_enqueue_style('spn-corrector-admin-css', SPN_CORRECTOR_URL . 'assets/css/admin-style.css', array(), $style_ver);
     
-    // Cargar script JS de control AJAX
-    wp_enqueue_script('spn-corrector-admin-js', SPN_CORRECTOR_URL . 'assets/js/admin-ajax.js', array('jquery'), '1.0.0', true);
+    // Cargar script JS de control AJAX con cache-busting dinámico basado en modificación del archivo
+    $js_ver = file_exists(SPN_CORRECTOR_DIR . 'assets/js/admin-ajax.js') ? filemtime(SPN_CORRECTOR_DIR . 'assets/js/admin-ajax.js') : '1.0.0';
+    wp_enqueue_script('spn-corrector-admin-js', SPN_CORRECTOR_URL . 'assets/js/admin-ajax.js', array('jquery'), $js_ver, true);
     
     // Localizar variables de AJAX
     wp_localize_script('spn-corrector-admin-js', 'spn_corrector_vars', array(
