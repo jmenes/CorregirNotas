@@ -175,6 +175,18 @@ class SPN_Corrector {
                     if (abs($score_stored - $score_new) > 0.001 || abs($risked_stored - $risked_new) > 0.001) {
                         $att['score'] = $score_new;
                         $att['risked_score'] = $risked_new;
+
+                        // Corregir también el total de preguntas en los detalles del intento
+                        if (isset($att['details']) && is_array($att['details'])) {
+                            $question_order = isset($att['details']['question_order']) && is_array($att['details']['question_order']) ? $att['details']['question_order'] : array();
+                            $answered_keys = isset($att['details']['answered_ids']) && is_array($att['details']['answered_ids']) ? array_keys($att['details']['answered_ids']) : array();
+                            $historical_test_size = count(array_unique(array_merge($question_order, $answered_keys)));
+                            $historical_test_size = max($historical_test_size, isset($att['details']['total_questions']) ? (int)$att['details']['total_questions'] : 0);
+                            $historical_test_size = max($historical_test_size, count($answered_keys));
+
+                            $att['details']['total_questions'] = $historical_test_size;
+                        }
+
                         $test_modified = true;
                         $user_modified = true;
                         $corrected_count++;
